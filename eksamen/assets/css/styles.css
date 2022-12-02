@@ -393,7 +393,38 @@ header .btn:hover{
 
 
 /*=============== FOOTER ===============*/
+footer{
+  background: var(--body-color);
+  color: var(--body-color-blur);
+  padding: 3rem 0;
+  text-align: center;
+  align-items: center;
+  margin-top: 2rem;
+}
 
+hr{ 
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
+  opacity: 0%;
+} 
+.footercontent h1{
+  font-family: "Shrikhand", sans-serif;
+  color: var(--title-color);
+}
+.footercontent h2{
+  font-family: "Shrikhand", sans-serif;
+  color: var(--title-color);
+}
+.footercontent h3{
+  font-family: "Epilogue", sans-serif;
+  font-weight: bold;
+  color: black;
+}
 
 /*=============== SCROLL BAR ===============*/
 

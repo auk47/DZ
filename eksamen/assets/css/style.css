@@ -53,16 +53,20 @@
       --smaller-font-size: .813rem;
     }
   }
-  
+  .main {
+    overflow: hidden; /* For animation ScrollReveal */
+  }
+  body{
+    background-color: var(--body-color);
+  }
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: var(--body-font);
 }
-body{
-    overflow: hidden;
-}
+
 section{
     display: flex;
     justify-content: center;
@@ -197,3 +201,36 @@ header .btn:hover{
     z-index: 2;
 }
 
+/*Footer*/
+footer{
+    background: var(--body-color);
+    color: var(--body-color-blur);
+    padding: 3rem 0;
+    text-align: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+hr{ 
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+    opacity: 0%;
+} 
+.footercontent h1{
+    font-family: "Shrikhand", sans-serif;
+    color: var(--title-color);
+}
+.footercontent h2{
+    font-family: "Shrikhand", sans-serif;
+    color: var(--title-color);
+}
+.footercontent h3{
+    font-family: "Epilogue", sans-serif;
+    font-weight: bold;
+    color: black;
+}
