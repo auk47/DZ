@@ -1,7 +1,59 @@
 @import url('https://fonts.googleapis.com/css2?family=Engagement&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Style+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sansita&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
 
-
+/*=============== VARIABLES CSS ===============*/
+:root {
+    --header-height: 3.5rem;
+  
+    /*========== Colors ==========*/
+    /*Color mode HSL(hue, saturation, lightness)*/
+    --first-color: hsl(19, 64%, 54%);
+    --first-color-alt: hsl(19, 64%, 52%);
+    --title-color: hsl(19, 16%, 15%);
+    --text-color: hsl(19, 16%, 35%);
+    --text-color-light: hsl(19, 8%, 55%);
+    --body-color: hsl(19, 100%, 96%);
+    --body-color-blur: hsl(17, 66%, 87%);
+    --container-color: hsl(19, 100%, 97%);
+  
+    /*========== Font and typography ==========*/
+    /*.5rem = 8px | 1rem = 16px ...*/
+    --body-font: "Epilogue", sans-serif;
+    --title-font: "Shrikhand", sans-serif;
+    --subtitle-font: "Sansita", sans-serif;
+    --biggest-font-size: 2.25rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+  
+    /*========== Font weight ==========*/
+    --font-medium: 500;
+    --font-semi-bold: 600;
+  
+    /*========== z index ==========*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+  }
+  @media screen and (min-width: 1024px) {
+    :root {
+      --biggest-font-size: 4rem;
+      --h1-font-size: 2.25rem;
+      --h2-font-size: 1.5rem;
+      --h3-font-size: 1.25rem;
+      --normal-font-size: 1rem;
+      --small-font-size: .875rem;
+      --smaller-font-size: .813rem;
+    }
+  }
+  
 *{
     margin: 0;
     padding: 0;
@@ -16,21 +68,21 @@ section{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #f7fcca;
+    background: var(--body-color)
 }
 section .blur_clr{
     position: absolute;
     filter: blur(150px);
 }
 section .blur_clr:nth-child(1){
-    background: #fffd87;
+    background: var(--body-color-blur);
     width: 500px;
     height: 500px;
     right: -50px;
     top: -250px;
 }
 section .blur_clr:nth-child(2){
-    background: #fffd87;
+    background: var(--body-color-blur);
     width: 300px;
     height: 300px;
     left: -100px;
@@ -56,12 +108,11 @@ header .nav{
 header .nav li{
     list-style: none;
     margin: 0 10px;
-    
-
 }
+
 header .nav li a{
     color: #8a2435;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: var(--subtitle-font);
     font-weight: bold;
     text-decoration: none;
     padding: 8px 15px;
@@ -79,7 +130,7 @@ header .btn{
     text-decoration: none;
     padding: 8px 15px;
     border-radius: 25px;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: var(--subtitle-font);
     font-weight: bold;
     font-size: large;
     transition: 0.5s;
@@ -98,16 +149,16 @@ header .btn:hover{
     max-width: 500px;   
 }
 .content .contentBx h1{
-    font-size: 4.5em;
-    font-family: "Style Script", sans-serif;
-    color: #000;
+    font-size: 4.5rem;
+    font-family: var(--title-font);
+    color: var(--title-color);
     line-height: 1em;
     margin: 10px;
 }
 
 .content .contentBx p{
     font-size: 1.1em;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: var(--body-font);
     color: #000;
     margin: 30px 10px;
 }
@@ -117,7 +168,7 @@ header .btn:hover{
     text-decoration: none;
     padding: 8px 15px;
     border-radius: 25px;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: var(--subtitle-font);
     font-weight: bold;
     font-size: large;
     margin: 10px;

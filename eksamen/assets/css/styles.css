@@ -10,12 +10,13 @@
   
     /*========== Colors ==========*/
     /*Color mode HSL(hue, saturation, lightness)*/
-    --first-color: hsl(19, 64%, 54%);
+    --first-color: #8a2435;
     --first-color-alt: hsl(19, 64%, 52%);
     --title-color: hsl(19, 16%, 15%);
     --text-color: hsl(19, 16%, 35%);
     --text-color-light: hsl(19, 8%, 55%);
     --body-color: hsl(19, 100%, 96%);
+    --body-color-blur: hsl(17, 66%, 87%);
     --container-color: hsl(19, 100%, 97%);
   
     /*========== Font and typography ==========*/
@@ -138,40 +139,110 @@
   .main {
     overflow: hidden; /* For animation ScrollReveal */
   }
-  /*=============== HEADER & NAV ===============*/
+  
+/*=============== HEADER & NAV ===============*/
+.header{
+  z-index: 1;
+}
+header{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center ;
+}
 
+header .nav{
+  position: relative;
+  display: flex;
+  z-index: 2;
+}
 
-/* Show menu */
+header .nav li{
+  list-style: none;
+  margin: 0 10px;
+  z-index: 2;
+}
 
+header .nav li a{
+  color: #8a2435;
+  font-family: var(--subtitle-font);
+  font-weight: bold;
+  text-decoration: none;
+  padding: 8px 15px;
+  border-radius: 25px;
+  font-size: x-large;
+  transition: 0.5s;
+  z-index: 2;
+}
 
-/* Change background header */
+header .nav li a:hover{
+  background: #fff;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
 
+header .btn{
+  background: #8a2435;
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 15px;
+  border-radius: 25px;
+  font-family: var(--subtitle-font);
+  font-weight: bold;
+  font-size: large;
+  transition: 0.5s;
+  z-index: 2;
+}
 
-/* Active link */
-
-
-/*=============== HOME ===============*/
-
-
-/*=============== BUTTON ===============*/
-
-
-/*=============== ABOUT ===============*/
-
+header .btn:hover{
+  transform: scale(0.9);
+}
 
 /*=============== MENY ===============*/
+.menupage{
+    background: var(--body-color);
+}
+
+.blur_clr{
+    position: absolute;
+    filter: blur(150px);
+}
+
+.blur_clr:nth-child(1){
+    background: var(--body-color-blur);
+    width: 500px;
+    height: 500px;
+    right: -50px;
+    top: -250px;
+    z-index: 1;
+}
+
+.blur_clr:nth-child(2){
+    background: var(--body-color-blur);
+    width: 300px;
+    height: 300px;
+    left: -100px;
+    bottom: 550px;
+    z-index: 1;
+}
+
 .topimage{
     display: flex;
     justify-content: center;
-    padding-bottom: 30rem;
+    padding-bottom: 40rem;
 }
+
 .top__image{
     border-radius: 53% 45% 51% 50% / 47% 51% 50% 54% ;
     width: 400px;
     position: absolute;
     inset: 0;
-    top: 0;
+    top: 10;
     margin: 0 auto;
+    margin-top: 10rem;
     transition: transform .4s;
 }
 
@@ -294,30 +365,25 @@
 
 .meny__leaf1{
     width: 200px;
-    top: 50rem;
+    top: 60rem;
     left: -1rem;
     transform: rotate(90deg);
 }
 
 .meny__leaf2{
     width: 200px;
-    top: 75rem;
+    top: 85rem;
     right: -1rem;
     transform: rotate(-50deg);
 }
 
 .meny__leaf3{
     width: 200px;
-    top: 105rem;
+    top: 125rem;
     left: -1rem;
     transform: rotate(90deg);
 }
 
-
-/*=============== RECENTLY ===============*/
-
-
-/*=============== NEWSLETTER ===============*/
 
 
 /*=============== FOOTER ===============*/
