@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Engagement&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Style+Script&display=swap');
+
+
 *{
     margin: 0;
     padding: 0;
@@ -47,17 +51,22 @@ header{
 header .nav{
     position: relative;
     display: flex;
+   
 }
 header .nav li{
     list-style: none;
     margin: 0 10px;
+    
+
 }
 header .nav li a{
     color: #8a2435;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
     text-decoration: none;
     padding: 8px 15px;
     border-radius: 25px;
-    font-weight: 500;
+    font-size: x-large;
     transition: 0.5s;
 }
 header .nav li a:hover{
@@ -70,7 +79,9 @@ header .btn{
     text-decoration: none;
     padding: 8px 15px;
     border-radius: 25px;
-    font-weight: 500;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: large;
     transition: 0.5s;
 }
 header .btn:hover{
@@ -88,12 +99,15 @@ header .btn:hover{
 }
 .content .contentBx h1{
     font-size: 4.5em;
+    font-family: "Style Script", sans-serif;
     color: #000;
     line-height: 1em;
     margin: 10px;
 }
+
 .content .contentBx p{
-    font-size: 1em;
+    font-size: 1.1em;
+    font-family: 'Times New Roman', Times, serif;
     color: #000;
     margin: 30px 10px;
 }
@@ -103,7 +117,9 @@ header .btn:hover{
     text-decoration: none;
     padding: 8px 15px;
     border-radius: 25px;
-    font-weight: 500;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: large;
     margin: 10px;
     transition: 0.5s;
 }
