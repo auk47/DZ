@@ -68,7 +68,7 @@ section{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: var(--body-color)
+    background: var(--body-color);
 }
 section .blur_clr{
     position: absolute;
@@ -80,13 +80,15 @@ section .blur_clr:nth-child(1){
     height: 500px;
     right: -50px;
     top: -250px;
+    z-index: 1;
 }
 section .blur_clr:nth-child(2){
     background: var(--body-color-blur);
     width: 300px;
     height: 300px;
     left: -100px;
-    bottom: -150px;
+    bottom: -150px; 
+    z-index: 1;
 }
 
 header{
@@ -97,7 +99,8 @@ header{
     padding: 30px 100px;
     display: flex;
     justify-content: space-between;
-    align-items: center ;
+    align-items: center;
+    z-index: 2;
 }
 
 header .nav{
@@ -139,14 +142,22 @@ header .btn:hover{
     transform: scale(0.9);
 }
 
+.logo{
+    align-items: center;
+    width: 50px;
+    margin-top: 1rem;
+    z-index: 2;
+}
+
 .content{
     width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    z-index: 2;
 }
 .content .contentBx{
-    max-width: 500px;   
+    max-width: 500px;  
 }
 .content .contentBx h1{
     font-size: 4.5rem;
@@ -178,5 +189,11 @@ header .btn:hover{
     background: #fff;
     color: #8a2435;
     box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+.hero_pic{
+    align-items: center;
+    width: 35rem;
+    margin-top: 2rem;
+    z-index: 2;
 }
 

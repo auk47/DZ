@@ -228,6 +228,12 @@ header .btn:hover{
     bottom: 550px;
     z-index: 1;
 }
+.logo{
+  align-items: center;
+  width: 50px;
+  margin-top: 1rem;
+  z-index: 2;
+}
 
 .topimage{
     display: flex;
