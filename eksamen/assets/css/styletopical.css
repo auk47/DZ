@@ -430,3 +430,21 @@ div {
     text-decoration: none;
     top: 15rem;
   }
+
+  .bilde__info{
+    position: relative;
+    padding-top: 4rem;
+    grid-template-columns: 250px;
+    justify-content: center;
+    row-gap: 7.5rem;
+  }
+
+  .soda__grid{
+    width: 2200px;
+    position: absolute;
+    inset: 0;
+    top: 7rem;
+    margin: 0 auto;
+    left: -25rem;
+    transition: transform .4s;
+  }
