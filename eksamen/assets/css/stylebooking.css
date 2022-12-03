@@ -1,0 +1,510 @@
+@import url('https://fonts.googleapis.com/css2?family=Sansita&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+    --header-height: 3.5rem;
+  
+    /*========== Colors ==========*/
+    /*Color mode HSL(hue, saturation, lightness)*/
+    --first-color: #3e130d;;
+    --first-color-alt: hsl(19, 64%, 52%);
+    --title-color: hsl(19, 16%, 15%);
+    --text-color: hsl(19, 16%, 35%);
+    --text-color-light: hsl(19, 8%, 55%);
+    --body-color: hsl(19, 100%, 96%);
+    --body-color-blur: hsl(17, 66%, 87%);
+    --container-color: hsl(19, 100%, 97%);
+  
+    /*========== Font and typography ==========*/
+    /*.5rem = 8px | 1rem = 16px ...*/
+    --body-font: "Epilogue", sans-serif;
+    --title-font: "Shrikhand", sans-serif;
+    --subtitle-font: "Sansita", sans-serif;
+    --biggest-font-size: 2.25rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+  
+    /*========== Font weight ==========*/
+    --font-medium: 500;
+    --font-semi-bold: 600;
+  
+    /*========== z index ==========*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+  }
+  @media screen and (min-width: 1024px) {
+    :root {
+      --biggest-font-size: 4rem;
+      --h1-font-size: 2.25rem;
+      --h2-font-size: 1.5rem;
+      --h3-font-size: 1.25rem;
+      --normal-font-size: 1rem;
+      --small-font-size: .875rem;
+      --smaller-font-size: .813rem;
+    }
+  }
+  
+  /*=============== BASE ===============*/
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--body-color);
+    color: var(--text-color);
+    transition: background 0.4s; /* for dark mode animation */
+  }
+
+  h1, h2, h3 {
+    color: var(--title-color);
+    font-weight: var(--font-medium);
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  /*=============== THEME ===============*/
+.nav__buttons{
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+  }
+  
+  .change-theme{
+    font-size: 1.25rem;
+    color: var(--title-color);
+    cursor: pointer;
+    transition: color .3s;
+  }
+  
+  /*========== Variables Dark theme ==========*/
+  body.dark-theme{
+    --first-color: #ac918d;
+    --first-color-alt: hsl(19, 64%, 52%);
+    --title-color: hsl(19, 24%, 85%);
+    --text-color: hsl(19, 16%, 65%);
+    --body-color: hsl(19, 12%, 8%);
+    --body-color-blur: hsl(20, 14%, 4%);
+    --container-color: hsl(19, 10%, 10%);
+    --dark-theme-red: #8a2435;
+  }
+
+    /*========== 
+      Color changes in some parts of 
+      the website, in light theme
+  ==========*/
+  .dark-theme .bg-header,
+.dark-theme .nav__menu{
+  box-shadow: 0 2px 8 hsla(19, 64%, 4%, .5);
+}
+
+.dark-theme .meny__card{
+  box-shadow: 0 8px 20px hsla(19, 64%, 4%, .2);
+}
+
+.dark-theme ::-webkit-scrollbar{
+  background-color: hsl(19, 8%, 15%);
+}
+
+.dark-theme ::-webkit-scrollbar-thumb{
+  background-color: hsl(19, 8%, 25%); 
+}
+
+.dark-theme ::-webkit-scrollbar-thumb:hover{
+  background-color: hsl(19, 8%, 35%); 
+}
+ /*=============== REUSABLE CSS CLASSES ===============*/
+ .container {
+    max-width: 1024px;
+    margin-inline: 1.5rem;
+  }
+  
+  .grid {
+    display: grid;
+    gap: 1.5rem;
+  }
+  
+  .section {
+    padding-block: 5rem 1rem;
+  }
+  
+  .section__title {
+    font-size: var(--biggest-font-size);
+    font-family: var(--title-font);
+    margin-bottom: 1.5rem;
+  }
+  
+  .section__subtitle {
+    display: block;
+    font-size: var(--normal-font-size);
+    font-family: var(--subtitle-font);
+    margin-bottom: 0.5rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-top: 5rem;
+  }
+  
+  .section__title, .section__subtitle {
+    text-align: center;
+  }
+  
+  .main {
+    overflow: hidden; /* For animation ScrollReveal */
+  }
+  
+/*=============== HEADER & NAV ===============*/
+.header{
+  position: fixed;
+  width: 100%;
+  background-color: var(--body-color);
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+  transition: box-shadow .3s, background .4s;
+}
+
+.nav{
+  position: relative;
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__logo, .nav__toggle, .nav__close{
+  display: flex;
+  color: var(--title-color);
+}
+
+.nav__logo{
+  align-items: center;
+  column-gap: .5rem;
+  font-family: var(--title-font);
+  font-size: var(--h3-font-size);
+  transition: color .3s;
+  text-decoration: none;
+}
+
+.nav__logo img{
+  width: 25px;
+}
+
+.nav__logo:hover{
+  color: #8a2435;
+}
+
+.nav__toggle{
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+    .nav__menu{
+        position: fixed;
+        top: -100%;
+        left: 0;
+        background-color: var(--body-color);
+        width: 100%;
+        box-shadow: 0 8px 20px hsla(19, 64%, 24%, .1);
+        padding-block: 3.5rem;
+        transition: top .4s;
+    }
+}
+
+.nav__list{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  row-gap: 2rem;
+  list-style: none;
+}
+
+.nav__link{
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+  transition: color .4s;
+}
+
+.nav__close{
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+header .nav li a{
+  color: #8a2435;
+  font-family: var(--subtitle-font);
+  font-weight: bold;
+  text-decoration: none;
+  padding: 8px 15px;
+  border-radius: 25px;
+  font-size: large;
+  transition: 0.5s;
+  z-index: 2;
+}
+
+header .nav li a:hover{
+  background: #fff;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+header .btn{
+  background: #8a2435;
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 15px;
+  border-radius: 25px;
+  font-family: var(--subtitle-font);
+  font-weight: bold;
+  font-size: large;
+  transition: 0.5s;
+  z-index: 2;
+}
+
+header .btn:hover{
+  transform: scale(0.9);
+}
+
+.show-menu{
+  top: 0;
+}
+
+/* Change background header */
+  .bg-header{
+    box-shadow: 0 2px 8px hsla(19, 64%, 24%, .1);
+}
+
+/*=============== MENY ===============*/
+.menupage{
+    background: var(--body-color);
+}
+
+.blur_clr{
+    position: absolute;
+    filter: blur(150px);
+}
+
+.blur_clr:nth-child(1){
+    background: var(--body-color-blur);
+    width: 500px;
+    height: 500px;
+    right: -50px;
+    top: -250px;
+    z-index: 1;
+}
+
+.blur_clr:nth-child(2){
+    background: var(--body-color-blur);
+    width: 300px;
+    height: 300px;
+    left: -100px;
+    bottom: 550px;
+    z-index: 1;
+}
+.logo{
+  align-items: center;
+  width: 50px;
+  margin-top: 1rem;
+  z-index: 2;
+}
+
+.topimage{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 40rem;
+}
+
+.top__image{
+    border-radius: 53% 45% 51% 50% / 47% 51% 50% 54% ;
+    width: 400px;
+    position: absolute;
+    inset: 0;
+    top: 10;
+    margin: 0 auto;
+    margin-top: 10rem;
+    transition: transform .4s;
+    z-index: 2;
+}
+
+.scroll{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.scroll a{
+    color: var(--first-color);
+    text-decoration: none;
+    display: flex;
+    font-family: var(--subtitle-font);
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    margin-right: 3rem;
+}
+
+.scroll a:hover{
+    color:#3e130d
+}
+
+
+/* hadeeqa start kodene herifra*/
+
+
+
+/*=============== FOOTER ===============*/
+footer{
+    background: var(--body-color);
+    color: var(--body-color-blur);
+    padding: 3rem 0;
+    text-align: center;
+    align-items: center;
+    margin-top: 2rem;
+  }
+  
+  hr{ 
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+    opacity: 0%;
+  } 
+  .footercontent h1{
+    font-family: "Shrikhand", sans-serif;
+    color: var(--title-color);
+  }
+  .footercontent h2{
+    font-family: "Shrikhand", sans-serif;
+    color: var(--title-color);
+  }
+  .footercontent h3{
+    font-family: "Epilogue", sans-serif;
+    font-weight: bold;
+    color: var(--title-color);
+  }
+  
+  /*=============== SCROLL BAR ===============*/
+  ::-webkit-scrollbar{
+    width: .6rem;
+    border-radius: .5rem;
+    background-color: hsl(19, 8%, 75%);
+  }
+  
+  ::-webkit-scrollbar-thumb{
+    border-radius: .5rem;
+    background-color: hsl(19, 8%, 65%);
+  }
+  
+  ::-webkit-scrollbar-thumb:hover{
+    background-color: hsl(19, 8%, 55%);
+  }
+  
+  
+  /*=============== BREAKPOINTS ===============*/
+  /* For small devices */
+  @media screen and (max-width: 340px) {
+    .container{
+      margin-inline: 1rem;
+    }
+  
+    .section{
+      padding-block: 4rem 1rem;
+    }
+  
+    .meny__title{
+      font-size: 1.5rem;
+    }
+  }
+  
+  /* For medium devices */
+  @media screen and (min-width: 767px) {
+    .nav{
+      column-gap: 3rem;
+    }
+  
+    .nav__toggle, .nav__close{
+      display: none;
+    }
+  
+    .nav__list{
+      flex-direction: row;
+      column-gap: 2rem;
+      justify-content: center;
+    }
+  
+    .nav__menu{
+      margin-left: auto;
+    }
+  
+    .nav__link{
+      font-size: 2px;
+      text-align: center;
+    }
+  
+    .dark-theme .nav__menu{
+      box-shadow: none;
+    }
+  
+    .meny__container{
+      grid-template-columns: repeat(2, 250px);
+    }
+    }
+  
+  /* For large devices */
+  @media screen and (min-width: 1024px){
+    .section{
+      padding-block: 7rem 1.5rem;
+    }
+  
+    .nav{
+      height: calc(var(--header-height) + 1.5rem);
+    }
+  
+    .scroll span{
+      font-size: 1.2rem;
+    }
+  
+    .meny__container{
+      grid-template-columns: repeat(3, 250px);
+      margin: auto;
+      place-content: center;
+      margin: auto;
+    }
+  
+    .meny__card{
+      align-items: center;
+    }
+  }
