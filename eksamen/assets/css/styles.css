@@ -209,6 +209,7 @@ body.dark-theme{
   font-family: var(--title-font);
   font-size: var(--h3-font-size);
   transition: color .3s;
+  text-decoration: none;
 }
 
 .nav__logo img{
@@ -242,6 +243,7 @@ body.dark-theme{
   flex-direction: column;
   text-align: center;
   row-gap: 2rem;
+  list-style: none;
 }
 
 .nav__link{

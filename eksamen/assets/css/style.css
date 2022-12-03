@@ -187,7 +187,6 @@ section .blur_clr:nth-child(2){
   .nav__toggle{
     font-size: 1.25rem;
     cursor: pointer;
-    margin-right: 2rem;
   }
   
   @media screen and (max-width: 767px) {
@@ -548,6 +547,8 @@ footer{
     justify-content: space-around;
     align-items: center;
     z-index: 2;
+    padding-right: 3rem;
+    padding-left: 3rem;
   }
 
   .home__data{
