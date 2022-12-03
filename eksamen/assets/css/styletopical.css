@@ -111,7 +111,7 @@ header ul li a:hover{
     padding: 100px;
 }
 
-#header__title{
+.header__title{
     position: relative;
     font-family: 'Oswald-bold', sans-serif;
     color: #7b50ca;
@@ -119,6 +119,8 @@ header ul li a:hover{
     text-transform: uppercase;
     text-align: center;
     align-items: center;
+    text-decoration: none;
+    font-size: 1.5rem;
 }
 
 
