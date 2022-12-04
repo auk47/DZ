@@ -302,10 +302,6 @@ header .btn:hover{
 }
 
 /*=============== MENY ===============*/
-.menupage{
-    background: var(--body-color);
-}
-
 .blur_clr{
     position: absolute;
     filter: blur(150px);
@@ -328,55 +324,6 @@ header .btn:hover{
     bottom: 550px;
     z-index: 1;
 }
-.logo{
-  align-items: center;
-  width: 50px;
-  margin-top: 1rem;
-  z-index: 2;
-}
-
-.topimage{
-    display: flex;
-    justify-content: center;
-    padding-bottom: 40rem;
-}
-
-.top__image{
-    border-radius: 53% 45% 51% 50% / 47% 51% 50% 54% ;
-    width: 400px;
-    position: absolute;
-    inset: 0;
-    top: 10;
-    margin: 0 auto;
-    margin-top: 10rem;
-    transition: transform .4s;
-    z-index: 2;
-}
-
-.scroll{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.scroll a{
-    color: var(--first-color);
-    text-decoration: none;
-    display: flex;
-    font-family: var(--subtitle-font);
-    font-size: 15px;
-    font-weight: bold;
-    text-align: center;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    margin-right: 3rem;
-}
-
-.scroll a:hover{
-    color:#3e130d
-}
-
 
 /* hadeeqa start kodene herifra*/
 
