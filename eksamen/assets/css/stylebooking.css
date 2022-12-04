@@ -358,7 +358,8 @@ header .btn:hover{
 .Info_2 p{
   padding: 0 1rem;
     margin-bottom: 1rem;
-    font-family: "Epilogue", sans-serif;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: large;
     color: var(--title-color);
 }
 
