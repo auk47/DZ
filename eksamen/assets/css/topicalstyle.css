@@ -169,6 +169,12 @@ section#about.about{
     cursor: pointer;
 }
 
+.about-img span{
+    color: #b78dfb;
+    font-family: 'Antonio', sans-serif;
+    cursor: pointer;
+}
+
 
 
 section#hoved.hoved{
