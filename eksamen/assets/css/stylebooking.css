@@ -301,7 +301,7 @@ header .btn:hover{
     box-shadow: 0 2px 8px hsla(19, 64%, 24%, .1);
 }
 
-/*=============== MENY ===============*/
+
 .blur_clr{
     position: absolute;
     filter: blur(150px);
@@ -343,6 +343,7 @@ header .btn:hover{
   grid-template-columns: 250px;
   justify-content: center;
   row-gap: 7.5rem;
+  text-align: center;
 }
 
 .Info_2 h1{
@@ -353,14 +354,16 @@ header .btn:hover{
   text-align: left;
   padding-top: 5rem;
   padding: 0 1rem;
+  text-align: center;
 }
 
 .Info_2 p{
   padding: 0 1rem;
     margin-bottom: 1rem;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: var(--body-font);
     font-size: large;
     color: var(--title-color);
+    text-align: center;
 }
 
 /*=============== FOOTER ===============*/
