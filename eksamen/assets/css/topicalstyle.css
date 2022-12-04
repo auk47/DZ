@@ -234,3 +234,23 @@ section#mer.mer{
     font-size: 1rem;
     line-height: 1.5rem;
 }
+
+
+.footer{
+    z-index: 4000;
+    width: 100%;
+    min-height: 90vh;
+    display: flex;
+    grid-gap: 1.5rem;
+    background: #1c0522;
+    padding-top: -10rem;
+    top: -10rem;
+}
+
+.footer-text a{
+    color: #b78dfb;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    line-height: 1.5rem;
+    cursor: pointer;
+}
