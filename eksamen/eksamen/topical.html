@@ -28,15 +28,58 @@
         <img src="../assets/img/topical/moon.png" id="moon" alt="cartoon image of moon">
         <img src="../assets/img/topical/mountains_behind.png" id="mountains_behind" alt="cartoon image of mountains1">
         <h2 id="text">Quantum reality</h2>
-        <a href="#" id="btn">Explore</a>
+        <a href="#about" id="btn">Explore</a>
         <img src="../assets/img/topical/mountains_front.png" id="mountains_front" alt="cartoon image of mountains2">
     </section>
-    <section class="main">
-    <div class="sec">
-        <h2>Rethinking reality</h2>
-        <p>Scientists are like prospectors, excavating the natural world seeking gems of knowledge <br> about physical reality. And in the century just past, scientists have dug deep enough to <br> discover that reality’s foundations do not mirror the world of everyday appearances. At its <br> roots, reality is described by the mysterious set of mathematical rules known as quantum <br> mechanics.</p>
-    </div>
-</section>
+
+
+    <section class="about" id="about">
+        <div class="about-text">
+            <h2>Rethinking reality</h2>
+            <p>Scientists are like prospectors, excavating the natural world seeking gems of knowledge <br> about physical reality. And in the century just past, scientists have dug deep enough to <br> discover that reality’s foundations do not mirror the world of everyday appearances. At its <br> roots, reality is described by the mysterious set of mathematical rules known as quantum <br> mechanics.</p>
+        </div>
+        <div class="about-img">
+            <img src="../assets/img/topical/head1.jpeg" class="about__img">
+            <a href="https://maxloeffler.com/Wall-Street-Journal-Future-of-Everything">Illustration by Max Löffler (2019)</a>
+        </div>
+    </section>
+
+    <section class="hoved" id="hoved">
+        <div class="hoved-img">
+            <img src="../assets/img/" alt="">
+        </div>
+        <div class="hoved-tekst">
+            <p>
+                Conceived at the turn of the 20th century and then emerging in its full form in the mid- <br> 1920s, quantum mechanics is the math that explains matter. It’s the theory for describing <br> the physics of the microworld, where atoms and molecules interact to generate the world <br> of human experience. And it’s at the heart of everything that made the century just past so <br> dramatically unlike the century preceding it. From cell phones to supercomputers, DVDs to <br> pdfs, quantum physics fueled the present-day electronics-based economy, transforming <br> commerce, communication and entertainment.
+                <br> <br> 
+                But quantum theory taught scientists much more than how to make computer chips. It <br> taught that reality isn’t what it seems. 
+            </p>
+
+        </div>
+
+    </section>
+
+    <script>
+        let stars = document.getElementById('stars');
+        let moon = document.getElementById('moon');
+        let mountains_behind = document.getElementById('mountains_behind');
+        let text = document.getElementById('text');
+        let btn = document.getElementById('btn');
+        let mountains_front = document.getElementById('mountains_front');
+        let header = document.querySelector('header');
+
+        window.addEventListener('scroll', function(){
+            let value = window.scrollY;
+            stars.style.left = value * 0.25 + 'px';
+            moon.style.top = value * 1.05 + 'px';
+            mountains_behind.style.top = value * 0.5 + 'px';
+            mountains_front.style.top = value * 0 + 'px';
+            text.style.marginRight = value * 4 + 'px';
+            text.style.marginTop = value * 1.5 + 'px';
+            btn.style.marginTop = value * 1.5 + 'px';
+            header.style.top = value * 0.5 + 'px';
+        })
+    </script>
 </body>
 </html>
 
