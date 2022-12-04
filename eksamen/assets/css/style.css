@@ -368,6 +368,7 @@ section .blur_clr:nth-child(2){
     text-align: center;
 }
 
+
 .home__title{
     font-family: var(--title-font);
     color: var(--title-color);
