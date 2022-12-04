@@ -325,9 +325,31 @@ header .btn:hover{
     z-index: 1;
 }
 
-/* hadeeqa start kodene herifra*/
+/* ============== Information ============*/
 
+.Info{
+  padding-top: 4rem;
+  grid-template-columns: 250px;
+  justify-content: center;
+  row-gap: 7.5rem;
+}
 
+.Info_2 h1{
+  font-family: var(--title-font);
+  color: var(--title-color);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: left;
+  padding-top: 5rem;
+  padding: 0 1rem;
+}
+
+.Info_2 p{
+  padding: 0 1rem;
+    margin-bottom: 1rem;
+    font-family: "Epilogue", sans-serif;
+    color: var(--title-color);
+}
 
 /*=============== FOOTER ===============*/
 footer{
