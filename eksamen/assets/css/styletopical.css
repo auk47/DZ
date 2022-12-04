@@ -4,15 +4,190 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap');
+/*=============== VARIABLES CSS ===============*/
+:root {
+    --header-height: 3.5rem;
+  
+    /*========== Colors ==========*/
+    /*Color mode HSL(hue, saturation, lightness)*/
+    --first-color: #3e130d;;
+    --first-color-alt: hsl(19, 64%, 52%);
+    --title-color: hsl(19, 16%, 15%);
+    --text-color: hsl(19, 16%, 35%);
+    --text-color-light: hsl(19, 8%, 55%);
+    --body-color: hsl(19, 100%, 96%);
+    --body-color-blur: hsl(17, 66%, 87%);
+    --container-color: hsl(19, 100%, 97%);
+  
+    /*========== Font and typography ==========*/
+    /*.5rem = 8px | 1rem = 16px ...*/
+    --body-font: "Epilogue", sans-serif;
+    --title-font: "Shrikhand", sans-serif;
+    --subtitle-font: "Sansita", sans-serif;
+    --biggest-font-size: 2.25rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+  
+    /*========== Font weight ==========*/
+    --font-medium: 500;
+    --font-semi-bold: 600;
+  
+    /*========== z index ==========*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+  }
+  @media screen and (min-width: 1024px) {
+    :root {
+      --biggest-font-size: 4rem;
+      --h1-font-size: 2.25rem;
+      --h2-font-size: 1.5rem;
+      --h3-font-size: 1.25rem;
+      --normal-font-size: 1rem;
+      --small-font-size: .875rem;
+      --smaller-font-size: .813rem;
+    }
+  }
+  
+  /*=============== BASE ===============*/
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--body-color);
+    color: var(--text-color);
+    transition: background 0.4s; /* for dark mode animation */
+  }
+  
+  h1, h2, h3 {
+    color: var(--title-color);
+    font-weight: var(--font-medium);
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+/*=============== THEME ===============*/
+.nav__buttons{
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+}
+
+.change-theme{
+  font-size: 1.25rem;
+  color: var(--title-color);
+  cursor: pointer;
+  transition: color .3s;
+}
+
+/*========== Variables Dark theme ==========*/
+body.dark-theme{
+  --first-color: #ac918d;
+  --first-color-alt: hsl(19, 64%, 52%);
+  --title-color: hsl(19, 24%, 85%);
+  --text-color: hsl(19, 16%, 65%);
+  --body-color: hsl(19, 12%, 8%);
+  --body-color-blur: hsl(20, 14%, 4%);
+  --container-color: hsl(19, 10%, 10%);
+  --dark-theme-red: #8a2435;
+}
+
+  /*========== 
+      Color changes in some parts of 
+      the website, in light theme
+  ==========*/
+  .dark-theme .bg-header,
+.dark-theme .nav__menu{
+  box-shadow: 0 2px 8 hsla(19, 64%, 4%, .5);
+}
+
+.dark-theme .meny__card{
+  box-shadow: 0 8px 20px hsla(19, 64%, 4%, .2);
+}
+
+.dark-theme ::-webkit-scrollbar{
+  background-color: hsl(19, 8%, 15%);
+}
+
+.dark-theme ::-webkit-scrollbar-thumb{
+  background-color: hsl(19, 8%, 25%); 
+}
+
+.dark-theme ::-webkit-scrollbar-thumb:hover{
+  background-color: hsl(19, 8%, 35%); 
+}
+  
+  /*=============== REUSABLE CSS CLASSES ===============*/
+  .container {
+    max-width: 1024px;
+    margin-inline: 1.5rem;
+  }
+  
+  .grid {
+    display: grid;
+    gap: 1.5rem;
+  }
+  
+  .section {
+    padding-block: 5rem 1rem;
+  }
+  
+  .section__title {
+    font-size: var(--biggest-font-size);
+    font-family: var(--title-font);
+    margin-bottom: 1.5rem;
+  }
+  
+  .section__subtitle {
+    display: block;
+    font-size: var(--normal-font-size);
+    font-family: var(--subtitle-font);
+    margin-bottom: 0.5rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-top: 5rem;
+  }
+  
+  .section__title, .section__subtitle {
+    text-align: center;
+  }
+  
+  .main {
+    overflow: hidden; /* For animation ScrollReveal */
+  }
+
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 body, html{
-    height: 100%;
-    width: 100%;
+  height: 100%;
+  width: 100%;
 }
 body{
     background-color: #0b0418;
@@ -52,12 +227,153 @@ section .blur_clr:nth-child(2){
     z-index: 1;
 }
 
+/*================== HEADER =======================*/
+
+/*=============== HEADER & NAV ===============*/
+.header{
+  position: fixed;
+  width: 100%;
+  background-color: #0b0418;
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+  transition: box-shadow .3s, background .4s;
+}
+
+.nav{
+  position: relative;
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__logo, .nav__toggle{
+  display: flex;
+  color: #7b50ca;
+}
+
+.header__title{
+  position: relative;
+  font-family: 'Oswald-bold', sans-serif;
+  color: #7b50ca;
+  font-weight: bolder;
+  text-transform: uppercase;
+  text-align: center;
+  align-items: center;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.nav__logo{
+    margin: 0;
+    color: #7b50ca;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-size: 1rem;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: .9px;
+    border: thin solid #7b50ca;
+    text-align: center;
+    padding: 5px;
+}
+
+.nav__logo img{
+  width: 25px;
+}
+
+.nav__logo:hover{
+  color: #7b50ca;
+}
+
+.nav__toggle{
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+    .nav__menu{
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #0b0418;
+        width: 100%;
+        box-shadow: 0 8px 20px hsla(19, 64%, 24%, .1);
+        padding-block: 3.5rem;
+        transition: top .4s;
+    }
+}
+
+.nav__list{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  row-gap: 2rem;
+  list-style: none;
+}
+
+.nav__link{
+  color: #7b50ca;
+  font-weight: var(--font-medium);
+  transition: color .4s;
+}
+
+.nav__close{
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+header .nav li a{
+  color: #7b50ca;
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 8px 15px;
+  border-radius: 25px;
+  font-size: large;
+  transition: 0.5s;
+  z-index: 2;
+}
+
+header .nav li a:hover{
+  background: #fff;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+header .btn{
+  background: #7b50ca;
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 15px;
+  border-radius: 25px;
+  font-family: var(--subtitle-font);
+  font-weight: bold;
+  font-size: large;
+  transition: 0.5s;
+  z-index: 2;
+}
+
+header .btn:hover{
+  transform: scale(0.9);
+}
+
+.show-menu{
+  top: 0;
+}
+
+/*
+
 header{
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 30px 100px;
+    /*padding: 30px 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -66,15 +382,15 @@ header{
 
 header .logo{
     margin: 0;
-    padding: .5rem;
     color: #7b50ca;
     font-family: 'Oswald', sans-serif;
     letter-spacing: 2px;
     text-transform: uppercase;
-    font-size: 1.5rem;
+    font-size: 1rem;
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke-width: .9px;
     border: thin solid #7b50ca;
+    text-align: center;
 }
 
 header ul{
@@ -88,7 +404,7 @@ header ul{
 
 header ul li{
     list-style: none;
-    margin-left: 20px;
+    margin-left: 10px;
 }
 
 header ul li a{
@@ -97,6 +413,8 @@ header ul li a{
     font-weight: bolder;
     padding: 6px 15px;
     border-radius: 20px;
+    font-size: 10px;
+    text-align: center;
 }
 
 header ul li a:hover{
@@ -120,9 +438,9 @@ header ul li a:hover{
     text-align: center;
     align-items: center;
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: .5rem;
 }
-
+*/
 
 /* ================= BEVEGENDE TEXT =============== */
 
@@ -505,6 +823,27 @@ div {
   .soda__glitchimg{
     width: 295rem;
     position: absolute;
+    opacity: .8;
+  }
+
+  .soda__circle{
+    top: -230rem;
+    padding: 0;
+    z-index: 6;
+  }
+
+  .soda__circlegrid{
+    padding: 10px 0;
+    margin: 0 auto;
+    grid-template-columns: auto;
+    justify-content: center;
+    display: flex;
+  }
+
+  .soda__circleimg{
+    width: 100rem;
+    position: absolute;
+    transform: rotate(15deg);
   }
 
 
