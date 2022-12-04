@@ -434,17 +434,29 @@ div {
   .bilde__info{
     position: relative;
     padding-top: 4rem;
-    grid-template-columns: 250px;
     justify-content: center;
-    row-gap: 7.5rem;
+    align-items: center;
   }
 
   .soda__grid{
-    width: 2200px;
+    width: 700px;
+    position: relative;
+    inset: 0;
+    top: 9rem;
+    right: 50%;
+    margin: 0 auto;
+    transition: transform .4s;
+    opacity: .4;
+    z-index: 1;
+  }
+
+  .soda{
+    width: 2000px;
     position: absolute;
     inset: 0;
-    top: 7rem;
+    top: 55rem;
     margin: 0 auto;
-    left: -25rem;
     transition: transform .4s;
+    opacity: .4;
+    z-index: 6;
   }
