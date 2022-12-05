@@ -321,7 +321,7 @@ header .btn:hover{
 }
 
 .testing_title p{
-    padding: 0 1rem;
+      padding: 0 1rem;
       margin-bottom: 1rem;
       font-family: var(--body-font);
       font-size: medium;
