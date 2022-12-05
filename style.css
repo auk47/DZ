@@ -435,60 +435,6 @@ section .blur_clr:nth-child(2){
     transform: translate(.25rem);
 }
 
-
-
-/*
-  .content{
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    z-index: 2;
-}
-.content .contentBx{
-    max-width: 500px;  
-}
-.content .contentBx h1{
-    font-size: 4.5rem;
-    font-family: var(--title-font);
-    color: var(--title-color);
-    line-height: 1em;
-    margin: 10px;
-}
-
-.content .contentBx p{
-    font-size: 1.1em;
-    font-family: var(--body-font);
-    color: #000;
-    margin: 30px 10px;
-}
-.content .contentBx .btn{
-    background: #8a2435;
-    color: #fff;
-    text-decoration: none;
-    padding: 8px 15px;
-    border-radius: 25px;
-    font-family: var(--subtitle-font);
-    font-weight: bold;
-    font-size: large;
-    margin: 10px;
-    transition: 0.5s;
-}
-.content .contentBx .btn:hover{
-    background: #fff;
-    color: #8a2435;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-}
-.hero_pic{
-    align-items: center;
-    width: 35rem;
-    margin-top: 2rem;
-    z-index: 2;
-}
-*/
-
-
-
 /*=============== FOOTER ===============*/
 footer{
     background: var(--body-color);
