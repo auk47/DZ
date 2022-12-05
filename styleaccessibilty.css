@@ -319,6 +319,16 @@ header .btn:hover{
   text-align: center;
   padding-top: 5rem;
 }
+
+.testing_title p{
+    padding: 0 1rem;
+      margin-bottom: 1rem;
+      font-family: var(--body-font);
+      font-size: medium;
+      color: var(--title-color);
+      text-align: center;
+      line-height: 2em;
+}
   
   
   /*=============== BREAKPOINTS ===============*/
